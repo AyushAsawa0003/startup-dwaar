@@ -1,7 +1,7 @@
 import React from "react";
 import "./FounderDashboard.css";
 
-import YoutubeEmbed from "../../../assets/vids/YoutubeEmbed.js";
+import YoutubeEmbed from "../../../../assets/vids/YoutubeEmbed.js";
 
 const FounderDashboard = () => {
   return (
@@ -19,7 +19,7 @@ const FounderDashboard = () => {
               <div className="text-center img-border">
                 <div className="img-fluid mb-4">
                   <img
-                    src={require("../../../assets/img/investors.jpg")}
+                    src={require("../../../../assets/img/investors.jpg")}
                     alt=""
                     height="160px"
                     width="220px"
@@ -32,7 +32,7 @@ const FounderDashboard = () => {
               <div className="text-center">
                 <div className="img-fluid mb-4">
                   <img
-                    src={require("../../../assets/img/incubators.jpg")}
+                    src={require("../../../../assets/img/incubators.jpg")}
                     alt=""
                     height="160px"
                     width="220px"
@@ -46,7 +46,7 @@ const FounderDashboard = () => {
               <div className="text-center">
                 <div className="img-fluid mb-4">
                   <img
-                    src={require("../../../assets/img/mentors.jpg")}
+                    src={require("../../../../assets/img/mentors.jpg")}
                     alt=""
                     height="160px"
                     width="220px"
@@ -60,7 +60,7 @@ const FounderDashboard = () => {
               <div className="text-center">
                 <div className="img-fluid mb-4">
                   <img
-                    src={require("../../../assets/img/jobs.jpg")}
+                    src={require("../../../../assets/img/jobs.jpg")}
                     alt=""
                     height="160px"
                     width="220px"
