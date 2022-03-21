@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import InputBox from "../../CustomReactComponents/CustomInputBox/InputBox.js";
+import {
+  InputBox,
+  SelectBox,
+} from "../../../CustomReactComponents/CustomInputBox/InputBox.js";
 
-import "../../CustomReactComponents/CustomInputBox/InputBox.css";
-import "../../CustomReactComponents/CustomInputBox/Form.css";
-import "../SignupPages/Signup.css";
+import "../../../CustomReactComponents/CustomInputBox/InputBox.css";
+import "../../../CustomReactComponents/CustomInputBox/Form.css";
+import "../../SignupPages/Signup.css";
 
 const SucessfullStartup = ({ setStartups, startups, setNumOfStartup }) => {
   const [startupDetails, setStartupDetails] = useState({});

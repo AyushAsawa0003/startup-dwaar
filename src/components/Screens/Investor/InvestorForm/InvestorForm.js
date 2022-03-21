@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   InputBox,
   SelectBox,
-} from "../../CustomReactComponents/CustomInputBox/InputBox.js";
+} from "../../../CustomReactComponents/CustomInputBox/InputBox.js";
 
-import "../../CustomReactComponents/CustomInputBox/InputBox.css";
-import "../../CustomReactComponents/CustomInputBox/Form.css";
-import "../SignupPages/Signup.css";
+import "../../../CustomReactComponents/CustomInputBox/InputBox.css";
+import "../../../CustomReactComponents/CustomInputBox/Form.css";
+import "../../SignupPages/Signup.css";
 import SucessfullStartup from "./SucessfullStartup";
 
 const InvestorForm = () => {
@@ -32,6 +32,8 @@ const InvestorForm = () => {
     pov: povDetails,
     sucessfullStartups: startups,
   });
+
+  console.log(JSON.stringify(investorDetails));
 
   const onChange = () => {};
   const heading = [

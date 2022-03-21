@@ -23,7 +23,7 @@ const NavigationBar = () => {
 
       <div className="nav-bar-option-container">
         {nav_options.map((option) => (
-          <Link to={`/${option.toLowerCase()}`}>
+          <Link to={`/${option.toLowerCase()}/dashboard`}>
             <a className="nav-bar-option text-lg fg-primary ">{option}</a>
           </Link>
         ))}
