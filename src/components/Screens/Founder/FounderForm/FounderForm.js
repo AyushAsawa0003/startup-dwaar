@@ -12,12 +12,6 @@ import "./FounderForm.css";
 const FounderForm = () => {
   const [page, setPage] = useState(1);
 
-  const [hasStartup, setHasStartup] = useState(0);
-  const [startups, setStartups] = useState([]);
-  const [numOfStartup, setNumOfStartup] = useState([]);
-
-  const [povDetails, setPovDetails] = useState({});
-
   const [startupDetails, setStartupDetails] = useState({
     interests: [],
   });
@@ -45,7 +39,7 @@ const FounderForm = () => {
   console.log(startupDetails);
   const heading = [
     "About Startup",
-    "Contact Info",
+    "Contact Information",
     "Category",
     "Your Interest",
   ];
