@@ -442,6 +442,24 @@ const IncubatorForm = () => {
                   setNumOfStartup={setNumOfStartup}
                 />
               ))}
+
+              <mb />
+              <label className="container text-md">
+                Terms and conditions The information posted on this website
+                could include hypertext links or pointers to information created
+                and maintained by non-Government/private organisations. DPIIT is
+                providing these links and pointers solely for your information
+                and convenience. When you select a link to an outside website,
+                you are leaving the 'Guidelines for Indian Government Websites'
+                site and are subject to the privacy and security policies of the
+                owners/sponsors of the outside website. These terms and
+                conditions shall be governed by and construed in accordance with
+                the Indian Laws. Any dispute arising under these terms and
+                conditions shall be subject to the jurisdiction of the courts of
+                India.
+                <input type="checkbox" />
+                <span className="checkmark"></span>
+              </label>
             </>
           )}
 
