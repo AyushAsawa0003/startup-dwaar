@@ -150,12 +150,14 @@ const InvestorForm = () => {
                 // onChange={onChange(e, )}
                 default={"Select"}
                 options={[
-                  "Analytics",
-                  "Advertising",
-                  "Software",
-                  "Marketing",
-                  "Electonics",
-                  "Automobile",
+                  "Private",
+                  "Government",
+                  "Local based Servicing",
+                  "Manufacturing",
+                  "Mobile",
+                  "Marketplace",
+                  "Saas",
+                  "Peer to Peer",
                 ]}
                 onChange={(e) =>
                   setInvestorDetails({
