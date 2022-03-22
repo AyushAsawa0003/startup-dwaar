@@ -54,7 +54,7 @@ const App = () => {
           <Route path="signup/founder/join" element={<FounderForm />} />
           <Route path="signup/mentor/join" element={<MentorForm />} />
           <Route path="signup/incubator/join" element={<IncubatorForm />} />
-          <Route path="signup/jobseeker/join" element={<JobSeekerForm />} />
+          <Route path="signup/job-seeker/join" element={<JobSeekerForm />} />
 
           {/* ////////////    Details  ////////////////*/}
           <Route path="/founder/details" element={<FounderDetails />} />

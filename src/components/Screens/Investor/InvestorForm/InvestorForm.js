@@ -33,7 +33,9 @@ const InvestorForm = () => {
     sucessfullStartups: startups,
   });
 
-  console.log(JSON.stringify(investorDetails));
+  console.log(povDetails);
+
+  console.log(investorDetails);
 
   const onChange = () => {};
   const heading = [

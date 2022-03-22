@@ -14,10 +14,6 @@ const MentorForm = () => {
   const [page, setPage] = useState(1);
   const [network, setNetwork] = useState(false);
 
-  console.log("====================================");
-  console.log(network);
-  console.log("====================================");
-
   const [hasStartup, setHasStartup] = useState(0);
   const [startups, setStartups] = useState([]);
   const [numOfStartup, setNumOfStartup] = useState([]);
