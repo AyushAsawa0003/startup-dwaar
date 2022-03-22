@@ -37,8 +37,8 @@ const InvestorForm = () => {
 
   const onChange = () => {};
   const heading = [
-    "About us",
-    "Contact Info",
+    "Basic Information",
+    "Contact Information",
     "Point of Contact",
     "Sucess Stories",
   ];
