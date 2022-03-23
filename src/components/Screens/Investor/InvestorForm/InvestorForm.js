@@ -384,7 +384,8 @@ const InvestorForm = () => {
                   setNumOfStartup={setNumOfStartup}
                 />
               ))}
-              <mb />
+              <span className="mb" />
+
               <label className="container text-md">
                 Terms and conditions The information posted on this website
                 could include hypertext links or pointers to information created
