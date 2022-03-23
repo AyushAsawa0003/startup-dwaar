@@ -175,7 +175,7 @@ const IncubatorDashboard = () => {
                         </li>
 
                         <li class="mb-2">
-                            <i class="icofont icofont-check-circled"> </i> Social networking and relative sharing More quality content, 
+                            <i class="icofont icofont-check-circled"> </i> Social - networking and relative sharing More quality content, 
                         </li>
                     </ul>
 
