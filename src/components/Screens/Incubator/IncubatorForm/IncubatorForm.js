@@ -40,6 +40,7 @@ const IncubatorForm = () => {
     pov: pocDetails,
 >>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
     sucessfullStartups: startups,
+    name: "",
   });
 
   const heading = [
