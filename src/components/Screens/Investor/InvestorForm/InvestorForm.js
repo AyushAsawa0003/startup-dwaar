@@ -8,6 +8,8 @@ import "../../../CustomReactComponents/CustomInputBox/InputBox.css";
 import "../../../CustomReactComponents/CustomInputBox/Form.css";
 import "../../SignupPages/Signup.css";
 import "./InvestorForm.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import SucessStories from "./SucessStories.js";
 
@@ -15,8 +17,6 @@ const InvestorForm = () => {
   const [page, setPage] = useState(1);
 
   const [startups, setStartups] = useState([]);
-
-  console.log(startups);
 
   const [pocDetails, setPocDetails] = useState({});
 
@@ -35,6 +35,7 @@ const InvestorForm = () => {
     sucessfullStartups: startups,
   });
 
+  const notify = data => toast(data);
   console.log(investorDetails);
 
   const onChange = () => {};
@@ -64,8 +65,59 @@ const InvestorForm = () => {
     updateSucessfullStartupDetails(startups);
   }, [startups]);
 
+  const changePage = () => {
+    setPage((prev) => (prev === 4 ? prev : prev + 1))
+  }
+
+  const addInvestor = async () => {
+    const response = await fetch('/investor/add_investor/', {
+      method : "POST",
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 
+        "first_name" : pocDetails.firstName,
+        "last_name" : pocDetails.lastName, 
+        "email" : pocDetails.emailId, 
+        "mobile_number" : pocDetails.mobileNum, 
+        "role" : pocDetails.role,  
+        "website" : pocDetails.website,
+        "social_media" : pocDetails.socialMediaURL,
+        "landline_number" : pocDetails.landlineNum,
+        "budget": investorDetails.budget, 
+        "stages" : investorDetails.stage, 
+        "description" : investorDetails.description, 
+        "industry" : investorDetails.industry,
+        "interest" : investorDetails.interest, 
+        "state" : investorDetails.state, 
+        "city" : investorDetails.city,
+        "country" : investorDetails.country,
+        "investor_mobile_number" : investorDetails.investorContact
+      })
+    });
+
+    const result = await response.json();
+    
+    result.success ? notify(result.success) :
+    result.error.map(e => notify(Object.keys(e) + " : " + e[Object.keys(e)]));
+  
+    // Errors
+    // error: Array(5)
+    // 0: {first_name: 'This field is required.'}
+    // 1: {last_name: 'This field is required.'}
+    // 2: {email: 'This field is required.'}
+    // 3: {mobile_number: 'This field is required.'}
+    // 4: {role: 'This field is required.'}
+    
+
+    // Error format - first_name: 'This field is required.'
+    // Object.keys(e) -> All keys in array
+    // e[Object.keys(e)] -> Value contain by key.
+  }
+
   return (
     <div className="form w-100">
+      <ToastContainer />
       <div className="form-container bg-white p-5">
         <div className="text-xxl align-center subhead fg-dark">
           {heading[page - 1]}
@@ -371,6 +423,7 @@ const InvestorForm = () => {
             <SucessStories startups={startups} setStartups={setStartups} />
           )}
 
+          { page !== 1 &&
           <div className="form-item">
             <input
               type={"button"}
@@ -382,9 +435,9 @@ const InvestorForm = () => {
               onClick={() => setPage((prev) => (prev === 1 ? prev : prev - 1))}
               required
             />
-          </div>
+          </div> }
           <div className="form-item">
-            <input
+            <input  
               disabled={false}
               type={"button"}
               name="submit-btn"
@@ -393,8 +446,8 @@ const InvestorForm = () => {
                 // checkAllFields()
                 true ? "btn-bg-primary" : "btn-primary"
               } fg-white`}
-              value={page === 4 ? "Submit" : "Next"}
-              onClick={() => setPage((prev) => (prev === 4 ? prev : prev + 1))}
+              value={ page === 4 ? "Submit" : "Next" }
+              onClick={ page === 4 ? addInvestor : changePage }
               required
             />
           </div>
