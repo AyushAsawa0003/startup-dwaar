@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   InputBox,
   SelectBox,
@@ -9,16 +9,13 @@ import "../../../CustomReactComponents/CustomInputBox/Form.css";
 import "../../SignupPages/Signup.css";
 import SucessfullStartup from "../../Investor/InvestorForm/SucessfullStartup.js";
 import "./MentorForm.css";
+import SucessStories from "../../Investor/InvestorForm/SucessStories.js";
 
 const MentorForm = () => {
   const [page, setPage] = useState(1);
   const [network, setNetwork] = useState(false);
 
-  const [hasStartup, setHasStartup] = useState(0);
   const [startups, setStartups] = useState([]);
-  const [numOfStartup, setNumOfStartup] = useState([]);
-
-  const [povDetails, setPovDetails] = useState({});
 
   const [mentorDetails, setMentorDetails] = useState({ network: "TIE" });
 
@@ -33,6 +30,15 @@ const MentorForm = () => {
   ];
 
   console.log(startups);
+
+  const updateSucessfullStartupDetails = (startups) => {
+    setMentorDetails({ ...mentorDetails, sucessfullStartups: startups });
+  };
+
+  useEffect(() => {
+    console.log("update startup details");
+    updateSucessfullStartupDetails(startups);
+  }, [startups]);
 
   return (
     <div className="form w-100">
@@ -56,25 +62,25 @@ const MentorForm = () => {
         <div className="form-main mt-4">
           {page === 1 ? (
             <>
-              <label class="container text-lg">
+              <label className="container text-lg">
                 Select your Network
-                <label class="container text-lg mt-4">
+                <label className="container text-lg mt-4">
                   Member of TIE
                   <input
                     type="radio"
                     name="radio"
                     onClick={() => setNetwork(false)}
                   />
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
-                <label class="container text-lg">
+                <label className="container text-lg">
                   Other
                   <input
                     type="radio"
                     name="radio"
                     onClick={() => setNetwork(true)}
                   />
-                  <span class="checkmark"></span>
+                  <span className="checkmark"></span>
                 </label>
                 {network ? (
                   <>
@@ -286,57 +292,7 @@ const MentorForm = () => {
               </div>
             </>
           ) : (
-            <>
-              <div className="form-item">
-                <span>
-                  <label htmlFor="sucess-story" className="text-md">
-                    Sucess Stories?
-                    {/* <span className="fg-danger"> *</span> */}
-                  </label>
-                  <input
-                    value={hasStartup}
-                    type="range"
-                    name="sucess-story"
-                    id="sucess-story"
-                    // className="input-field"
-                    className="slider-btn fg-primary"
-                    min={0}
-                    max={1}
-                    onChange={(e) => {
-                      setHasStartup(e.target.value);
-                      setNumOfStartup([...numOfStartup, e.target.value]);
-                    }}
-                    required
-                  />
-                </span>
-              </div>
-              <div className="form-item align-center"></div>
-
-              {numOfStartup.map((num) => (
-                <SucessfullStartup
-                  setStartups={setStartups}
-                  startups={startups}
-                  setNumOfStartup={setNumOfStartup}
-                />
-              ))}
-              <span className="mb" />
-              <label className="container text-md">
-                Terms and conditions The information posted on this website
-                could include hypertext links or pointers to information created
-                and maintained by non-Government/private organisations. DPIIT is
-                providing these links and pointers solely for your information
-                and convenience. When you select a link to an outside website,
-                you are leaving the 'Guidelines for Indian Government Websites'
-                site and are subject to the privacy and security policies of the
-                owners/sponsors of the outside website. These terms and
-                conditions shall be governed by and construed in accordance with
-                the Indian Laws. Any dispute arising under these terms and
-                conditions shall be subject to the jurisdiction of the courts of
-                India.
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-            </>
+            <SucessStories startups={startups} setStartups={setStartups} />
           )}
 
           <div className="form-item">

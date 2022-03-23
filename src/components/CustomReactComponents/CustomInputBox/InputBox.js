@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./InputBox.css";
 
 import "../../Screens/SignupPages/Signup.css";
+import { v4 as uuidv4 } from "uuid";
 
 export const InputBox = (props) => {
   const [isFocus, setIsFocus] = useState(false);
@@ -66,7 +67,9 @@ export const SelectBox = (props) => {
           {props.default}
         </option>
         {props.options.map((option) => (
-          <option value={option}>{option}</option>
+          <option value={option} key={uuidv4()}>
+            {option}
+          </option>
         ))}
       </select>
       {/* </div> */}

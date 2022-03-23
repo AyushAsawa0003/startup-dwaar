@@ -2,6 +2,7 @@
 import React from "react";
 import "./NavigationBar.css";
 import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 const NavigationBar = () => {
   const nav_options = [
@@ -23,18 +24,18 @@ const NavigationBar = () => {
 
       <div className="nav-bar-option-container">
         {nav_options.map((option) => (
-          <Link to={`/${option.toLowerCase()}/dashboard`}>
-            <a className="nav-bar-option text-lg fg-primary ">{option}</a>
+          <Link to={`/${option.toLowerCase()}/dashboard`} key={uuidv4()}>
+            <span className="nav-bar-option text-lg fg-primary">{option}</span>
           </Link>
         ))}
       </div>
 
       <div className="authentication-container">
         <Link to="/login">
-          <a className="nav-bar-option text-lg fg-primary">Login</a>
+          <span className="nav-bar-option text-lg fg-primary">Login</span>
         </Link>
         <Link to={"/signup"}>
-          <a className="nav-bar-option text-lg fg-primary">Signup</a>
+          <span className="nav-bar-option text-lg fg-primary">Signup</span>
         </Link>
       </div>
     </nav>
