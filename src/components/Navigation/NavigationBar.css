@@ -4,6 +4,9 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 0px 5px 0.5px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-bar-title {
@@ -17,7 +20,7 @@
   align-items: center;
 }
 
-a.nav-bar-option {
+span.nav-bar-option {
   cursor: pointer;
   margin: 10px 15px;
   text-decoration: none !important;

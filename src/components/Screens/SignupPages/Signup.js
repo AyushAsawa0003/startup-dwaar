@@ -1,6 +1,7 @@
 import React from "react";
 import "./Signup.css";
 import { useParams, Link, useNavigate, Outlet } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 const users = [
   {
@@ -36,7 +37,7 @@ const Signup = () => {
     <div className="signup-card-container">
       <Outlet />
       {users.map((user) => (
-        <div className="signup-main fg-dark bg-white">
+        <div className="signup-main fg-dark bg-white" key={uuidv4()}>
           <div className="text-xxl fg-bold">For {user.name.toUpperCase()}</div>
           <hr />
           <div className="text-lg fg-bold">{user.metainfo}</div>
