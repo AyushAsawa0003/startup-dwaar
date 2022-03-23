@@ -10,7 +10,7 @@ const FounderDashboard = () => {
         <div className="container dashboard bg-primary">
           <div className="text-center">
             <h1 className="dash-title">
-              Services we provide for Entrepreneurs
+              Services we provide for entrepreneurs
             </h1>
             <h2>See what can we do for your Business</h2>
           </div>
