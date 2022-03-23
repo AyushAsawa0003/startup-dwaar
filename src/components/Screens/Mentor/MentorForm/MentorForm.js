@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
+=======
+import React, { useState, useEffect } from "react";
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 import {
   InputBox,
   SelectBox,
@@ -9,16 +13,24 @@ import "../../../CustomReactComponents/CustomInputBox/Form.css";
 import "../../SignupPages/Signup.css";
 import SucessfullStartup from "../../Investor/InvestorForm/SucessfullStartup.js";
 import "./MentorForm.css";
+<<<<<<< HEAD
+=======
+import SucessStories from "../../Investor/InvestorForm/SucessStories.js";
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 
 const MentorForm = () => {
   const [page, setPage] = useState(1);
   const [network, setNetwork] = useState(false);
 
+<<<<<<< HEAD
   const [hasStartup, setHasStartup] = useState(0);
   const [startups, setStartups] = useState([]);
   const [numOfStartup, setNumOfStartup] = useState([]);
 
   const [povDetails, setPovDetails] = useState({});
+=======
+  const [startups, setStartups] = useState([]);
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 
   const [mentorDetails, setMentorDetails] = useState({ network: "TIE" });
 
@@ -34,6 +46,18 @@ const MentorForm = () => {
 
   console.log(startups);
 
+<<<<<<< HEAD
+=======
+  const updateSucessfullStartupDetails = (startups) => {
+    setMentorDetails({ ...mentorDetails, sucessfullStartups: startups });
+  };
+
+  useEffect(() => {
+    console.log("update startup details");
+    updateSucessfullStartupDetails(startups);
+  }, [startups]);
+
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
   return (
     <div className="form w-100">
       <div className="form-container bg-white p-5">
@@ -56,25 +80,41 @@ const MentorForm = () => {
         <div className="form-main mt-4">
           {page === 1 ? (
             <>
+<<<<<<< HEAD
               <label class="container text-lg">
                 Select your Network
                 <label class="container text-lg mt-4">
+=======
+              <label className="container text-lg">
+                Select your Network
+                <label className="container text-lg mt-4">
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                   Member of TIE
                   <input
                     type="radio"
                     name="radio"
                     onClick={() => setNetwork(false)}
                   />
+<<<<<<< HEAD
                   <span class="checkmark"></span>
                 </label>
                 <label class="container text-lg">
+=======
+                  <span className="checkmark"></span>
+                </label>
+                <label className="container text-lg">
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                   Other
                   <input
                     type="radio"
                     name="radio"
                     onClick={() => setNetwork(true)}
                   />
+<<<<<<< HEAD
                   <span class="checkmark"></span>
+=======
+                  <span className="checkmark"></span>
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                 </label>
                 {network ? (
                   <>
@@ -286,6 +326,7 @@ const MentorForm = () => {
               </div>
             </>
           ) : (
+<<<<<<< HEAD
             <>
               <div className="form-item">
                 <span>
@@ -337,6 +378,9 @@ const MentorForm = () => {
                 <span className="checkmark"></span>
               </label>
             </>
+=======
+            <SucessStories startups={startups} setStartups={setStartups} />
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
           )}
 
           <div className="form-item">

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
+=======
+import React, { useEffect, useState } from "react";
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 import {
   InputBox,
   SelectBox,
@@ -7,16 +11,30 @@ import {
 import "../../../CustomReactComponents/CustomInputBox/InputBox.css";
 import "../../../CustomReactComponents/CustomInputBox/Form.css";
 import "../../SignupPages/Signup.css";
+<<<<<<< HEAD
 import SucessfullStartup from "./SucessfullStartup";
+=======
+import "./InvestorForm.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import SucessStories from "./SucessStories.js";
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 
 const InvestorForm = () => {
   const [page, setPage] = useState(1);
 
+<<<<<<< HEAD
   const [hasStartup, setHasStartup] = useState(0);
   const [startups, setStartups] = useState([]);
   const [numOfStartup, setNumOfStartup] = useState([]);
 
   const [povDetails, setPovDetails] = useState({});
+=======
+  const [startups, setStartups] = useState([]);
+
+  const [pocDetails, setPocDetails] = useState({});
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 
   const [investorDetails, setInvestorDetails] = useState({
     logo: "",
@@ -29,12 +47,20 @@ const InvestorForm = () => {
     city: "",
     country: "",
     investorContact: "",
+<<<<<<< HEAD
     pov: povDetails,
     sucessfullStartups: startups,
   });
 
   console.log(povDetails);
 
+=======
+    poc: pocDetails,
+    sucessfullStartups: startups,
+  });
+
+  const notify = data => toast(data);
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
   console.log(investorDetails);
 
   const onChange = () => {};
@@ -45,10 +71,85 @@ const InvestorForm = () => {
     "Sucess Stories",
   ];
 
+<<<<<<< HEAD
   console.log(startups);
 
   return (
     <div className="form w-100">
+=======
+  const updatePOcDetails = (pocDetails) => {
+    setInvestorDetails({ ...investorDetails, poc: pocDetails });
+  };
+
+  const updateSucessfullStartupDetails = (startups) => {
+    setInvestorDetails({ ...investorDetails, sucessfullStartups: startups });
+  };
+
+  useEffect(() => {
+    console.log("update poc details");
+    console.log("update poc details");
+    updatePOcDetails(pocDetails);
+  }, [pocDetails]);
+
+  useEffect(() => {
+    console.log("update startup details");
+    updateSucessfullStartupDetails(startups);
+  }, [startups]);
+
+  const changePage = () => {
+    setPage((prev) => (prev === 4 ? prev : prev + 1))
+  }
+
+  const addInvestor = async () => {
+    const response = await fetch('/investor/add_investor/', {
+      method : "POST",
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 
+        "first_name" : pocDetails.firstName,
+        "last_name" : pocDetails.lastName, 
+        "email" : pocDetails.emailId, 
+        "mobile_number" : pocDetails.mobileNum, 
+        "role" : pocDetails.role,  
+        "website" : pocDetails.website,
+        "social_media" : pocDetails.socialMediaURL,
+        "landline_number" : pocDetails.landlineNum,
+        "budget": investorDetails.budget, 
+        "stages" : investorDetails.stage, 
+        "description" : investorDetails.description, 
+        "industry" : investorDetails.industry,
+        "interest" : investorDetails.interest, 
+        "state" : investorDetails.state, 
+        "city" : investorDetails.city,
+        "country" : investorDetails.country,
+        "investor_mobile_number" : investorDetails.investorContact
+      })
+    });
+
+    const result = await response.json();
+    
+    result.success ? notify(result.success) :
+    result.error.map(e => notify(Object.keys(e) + " : " + e[Object.keys(e)]));
+  
+    // Errors
+    // error: Array(5)
+    // 0: {first_name: 'This field is required.'}
+    // 1: {last_name: 'This field is required.'}
+    // 2: {email: 'This field is required.'}
+    // 3: {mobile_number: 'This field is required.'}
+    // 4: {role: 'This field is required.'}
+    
+
+    // Error format - first_name: 'This field is required.'
+    // Object.keys(e) -> All keys in array
+    // e[Object.keys(e)] -> Value contain by key.
+  }
+
+  return (
+    <div className="form w-100">
+      <ToastContainer />
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
       <div className="form-container bg-white p-5">
         <div className="text-xxl align-center subhead fg-dark">
           {heading[page - 1]}
@@ -248,8 +349,13 @@ const InvestorForm = () => {
                   idValue="first-name"
                   title="First Name"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       firsName: data,
                     })
                   }
@@ -261,8 +367,13 @@ const InvestorForm = () => {
                   idValue="last-name"
                   title="Last Name"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       lastName: data,
                     })
                   }
@@ -274,8 +385,13 @@ const InvestorForm = () => {
                   idValue="email-id"
                   title="Email ID"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       emailId: data,
                     })
                   }
@@ -287,8 +403,13 @@ const InvestorForm = () => {
                   idValue="mobile-num"
                   title="Mobile number"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       mobileNum: data,
                     })
                   }
@@ -300,8 +421,13 @@ const InvestorForm = () => {
                   idValue="role"
                   title="Role"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       role: data,
                     })
                   }
@@ -313,8 +439,13 @@ const InvestorForm = () => {
                   idValue="landlineNum"
                   title="Landline Number"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       landlineNum: data,
                     })
                   }
@@ -327,8 +458,13 @@ const InvestorForm = () => {
                   idValue="website"
                   title="Website"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       website: data,
                     })
                   }
@@ -341,8 +477,13 @@ const InvestorForm = () => {
                   idValue="social-media"
                   title="Social Media URL"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       socialMediaURL: data,
                     })
                   }
@@ -351,6 +492,7 @@ const InvestorForm = () => {
               </div>
             </>
           ) : (
+<<<<<<< HEAD
             <>
               <div className="form-item">
                 <span>
@@ -404,6 +546,12 @@ const InvestorForm = () => {
             </>
           )}
 
+=======
+            <SucessStories startups={startups} setStartups={setStartups} />
+          )}
+
+          { page !== 1 &&
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
           <div className="form-item">
             <input
               type={"button"}
@@ -415,9 +563,15 @@ const InvestorForm = () => {
               onClick={() => setPage((prev) => (prev === 1 ? prev : prev - 1))}
               required
             />
+<<<<<<< HEAD
           </div>
           <div className="form-item">
             <input
+=======
+          </div> }
+          <div className="form-item">
+            <input  
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
               disabled={false}
               type={"button"}
               name="submit-btn"
@@ -426,8 +580,13 @@ const InvestorForm = () => {
                 // checkAllFields()
                 true ? "btn-bg-primary" : "btn-primary"
               } fg-white`}
+<<<<<<< HEAD
               value={page === 4 ? "Submit" : "Next"}
               onClick={() => setPage((prev) => (prev === 4 ? prev : prev + 1))}
+=======
+              value={ page === 4 ? "Submit" : "Next" }
+              onClick={ page === 4 ? addInvestor : changePage }
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
               required
             />
           </div>
@@ -437,4 +596,8 @@ const InvestorForm = () => {
   );
 };
 
+<<<<<<< HEAD
 export default InvestorForm;
+=======
+export default InvestorForm;
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff

@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import './InvestorDashboard.css';
 import YoutubeEmbed from "../../../../assets/vids/YoutubeEmbed.js";
 
@@ -273,6 +274,11 @@ const InvestorDashboard = () => {
         </div>
       </div>
   </div>;
+=======
+
+const InvestorDashboard = () => {
+  return <div>InvestorDashboard</div>;
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 };
 
 export default InvestorDashboard;

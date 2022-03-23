@@ -1,5 +1,9 @@
 {
   "name": "startupdwaar",
+<<<<<<< HEAD
+=======
+  "proxy": "http://localhost:8000/",
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,7 +18,14 @@
     "react-phone-number-input": "^3.1.46",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+<<<<<<< HEAD
     "react-select": "^5.2.2",
+=======
+    "react-search-box": "^2.2.1",
+    "react-select": "^5.2.2",
+    "react-toastify": "^8.2.0",
+    "uuid": "^8.3.2",
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
     "web-vitals": "^2.1.4"
   },
   "scripts": {

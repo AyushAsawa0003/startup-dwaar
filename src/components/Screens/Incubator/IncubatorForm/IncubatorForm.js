@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
+=======
+import React, { useState, useEffect } from "react";
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 import {
   InputBox,
   SelectBox,
@@ -7,11 +11,17 @@ import {
 import "../../../CustomReactComponents/CustomInputBox/InputBox.css";
 import "../../../CustomReactComponents/CustomInputBox/Form.css";
 import "../../SignupPages/Signup.css";
+<<<<<<< HEAD
 import SucessfullStartup from "./SucessfullStartup";
+=======
+
+import SucessStories from "../../Investor/InvestorForm/SucessStories.js";
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 
 const IncubatorForm = () => {
   const [page, setPage] = useState(1);
 
+<<<<<<< HEAD
   const [hasStartup, setHasStartup] = useState(0);
   const [startups, setStartups] = useState([]);
   const [numOfStartup, setNumOfStartup] = useState([]);
@@ -20,6 +30,15 @@ const IncubatorForm = () => {
 
   const [incubatorDetails, setIncubatorDetails] = useState({
     pov: povDetails,
+=======
+  const [startups, setStartups] = useState([]);
+  useState([]);
+
+  const [pocDetails, setPocDetails] = useState({});
+
+  const [incubatorDetails, setIncubatorDetails] = useState({
+    pov: pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
     sucessfullStartups: startups,
   });
 
@@ -32,6 +51,27 @@ const IncubatorForm = () => {
 
   console.log(startups);
 
+<<<<<<< HEAD
+=======
+  const updatePOcDetails = (pocDetails) => {
+    setIncubatorDetails({ ...incubatorDetails, poc: pocDetails });
+  };
+
+  const updateSucessfullStartupDetails = (startups) => {
+    setIncubatorDetails({ ...incubatorDetails, sucessfullStartups: startups });
+  };
+
+  useEffect(() => {
+    console.log("update poc details");
+    updatePOcDetails(pocDetails);
+  }, [pocDetails]);
+
+  useEffect(() => {
+    console.log("update startup details");
+    updateSucessfullStartupDetails(startups);
+  }, [startups]);
+
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
   return (
     <div className="form w-100">
       <div className="form-container bg-white p-5">
@@ -306,8 +346,13 @@ const IncubatorForm = () => {
                   idValue="first-name"
                   title="First Name"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       firsName: data,
                     })
                   }
@@ -319,8 +364,13 @@ const IncubatorForm = () => {
                   idValue="last-name"
                   title="Last Name"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       lastName: data,
                     })
                   }
@@ -332,8 +382,13 @@ const IncubatorForm = () => {
                   idValue="email-id"
                   title="Email ID"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       emailId: data,
                     })
                   }
@@ -345,8 +400,13 @@ const IncubatorForm = () => {
                   idValue="mobile-num"
                   title="Mobile number"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       mobileNum: data,
                     })
                   }
@@ -358,8 +418,13 @@ const IncubatorForm = () => {
                   idValue="role"
                   title="Role"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       role: data,
                     })
                   }
@@ -371,8 +436,13 @@ const IncubatorForm = () => {
                   idValue="landlineNum"
                   title="Landline Number"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       landlineNum: data,
                     })
                   }
@@ -385,8 +455,13 @@ const IncubatorForm = () => {
                   idValue="website"
                   title="Website"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       website: data,
                     })
                   }
@@ -399,8 +474,13 @@ const IncubatorForm = () => {
                   idValue="social-media"
                   title="Social Media URL"
                   getData={(data) =>
+<<<<<<< HEAD
                     setPovDetails({
                       ...povDetails,
+=======
+                    setPocDetails({
+                      ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       socialMediaURL: data,
                     })
                   }
@@ -409,6 +489,7 @@ const IncubatorForm = () => {
               </div>
             </>
           ) : (
+<<<<<<< HEAD
             <>
               <div className="form-item">
                 <span>
@@ -461,6 +542,9 @@ const IncubatorForm = () => {
                 <span className="checkmark"></span>
               </label>
             </>
+=======
+            <SucessStories startups={startups} setStartups={setStartups} />
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
           )}
 
           <div className="form-item">

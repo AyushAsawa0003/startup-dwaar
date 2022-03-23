@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import './IncubatorDashboard.css';
 import YoutubeEmbed from "../../../../assets/vids/YoutubeEmbed.js";
 
@@ -245,6 +246,11 @@ const IncubatorDashboard = () => {
         </div>
       </div>
   </div>;
+=======
+
+const IncubatorDashboard = () => {
+  return <div>IncubatorDashboard</div>;
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 };
 
 export default IncubatorDashboard;
