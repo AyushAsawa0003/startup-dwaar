@@ -21,6 +21,7 @@ const IncubatorForm = () => {
   const [incubatorDetails, setIncubatorDetails] = useState({
     pov: pocDetails,
     sucessfullStartups: startups,
+    name: "",
   });
 
   const heading = [

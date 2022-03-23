@@ -75,22 +75,30 @@ const JobSeekerDetails = () => {
   ];
 
   return (
-    <div className="main-container">
-      <h5 className="fg-primary mb">
-        Search Right Professional For your Startup
-      </h5>
-      <div className="search-bar-container text-sm bg-white">
-        <SelectBox data={technology} placeholder={"Technology"} />
-        <SelectBox data={location} placeholder={"Location"} />
-        <SelectBox data={availablity} placeholder={"Availablity"} />
+    <>
+      <div className="title-container bg-primary fg-white">
+        Find the right Talent to boost your Startup
       </div>
-      <div className="mb" />
-      <div className="profile-container">
-        <JobSeekerProfile />
-        <JobSeekerProfile />
-        <JobSeekerProfile />
+      <div className="main-container">
+        <h5 className="fg-white mb">
+          Search Right Professional For your Startup
+        </h5>
+        <div className="search-bar-container text-sm bg-white">
+          <SelectBox data={technology} placeholder={"Technology"} />
+          <SelectBox data={location} placeholder={"Location"} />
+          <SelectBox data={availablity} placeholder={"Availablity"} />
+        </div>
+        <div className="mb" />
+        <div className="profile-container">
+          <JobSeekerProfile />
+          <JobSeekerProfile />
+          <JobSeekerProfile />
+          <JobSeekerProfile />
+          <JobSeekerProfile />
+          <JobSeekerProfile />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
