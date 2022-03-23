@@ -55,6 +55,7 @@ const InvestorForm = () => {
 
   useEffect(() => {
     console.log("update poc details");
+    console.log("update poc details");
     updatePOcDetails(pocDetails);
   }, [pocDetails]);
 
