@@ -3,11 +3,12 @@ import {
   InputBox,
   SelectBox,
 } from "../../../CustomReactComponents/CustomInputBox/InputBox.js";
-
 import "../../../CustomReactComponents/CustomInputBox/InputBox.css";
 import "../../../CustomReactComponents/CustomInputBox/Form.css";
 import "../../SignupPages/Signup.css";
 import "./FounderForm.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const FounderForm = () => {
   const [page, setPage] = useState(1);
@@ -15,8 +16,6 @@ const FounderForm = () => {
   const [startupDetails, setStartupDetails] = useState({
     interests: [],
   });
-
-  console.log(JSON.stringify(startupDetails));
 
   const onCheck = (e) => {
     const val = e.target.value;
@@ -36,18 +35,71 @@ const FounderForm = () => {
     });
   };
 
-  console.log(startupDetails);
   const heading = [
     "About Startup",
     "Contact Information",
     "Category",
     "Your Interest",
   ];
+  const changePage = () => {
+    setPage((prev) => (prev === 4 ? prev : prev + 1))
+  }
+  
+  const notify = data => toast(data);
+  const addFounder = async () => {
+    console.log(startupDetails);
+    let startup_interests = { 
+      "All" : false,
+      "investor" : false,
+      "mentor" : false,
+      "incubator" : false,
+      "professional worker" : false
+    }
+    startupDetails.interests.map( interest => {
+      startup_interests[interest] = true;
+    } );
 
-  console.log(startupDetails);
+    const response = await fetch('/founder/add_founder/', {
+      method : "POST",
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 
+        "name" : startupDetails.startupName,
+        "startup_type" : startupDetails.fund, 
+        "email" : startupDetails.startupEmailID, 
+        "stage" : startupDetails.stage, 
+        "description" : startupDetails.brief,
+        "country" : startupDetails.country, 
+        "state" : startupDetails.state, 
+        "city" : startupDetails.city, 
+        "industry" : startupDetails.budget, 
+        "sector" : startupDetails.sector, 
+        "startup_services" : startupDetails.services,
+        "startup_entity" : startupDetails.nature,
+        "cin" : startupDetails.cin,
+        "legal_name" : startupDetails.legalName,
+        "intereted_all" : startup_interests["All"],
+        "intereted_incubator" : startup_interests["incubator"],
+        "intereted_investor" : startup_interests["investor"],
+        "intereted_worker" : startup_interests["professional worker"],
+        "intereted_mentor" : startup_interests["mentor"],
+        "mobile_number" : startupDetails.investorContact,
+        "website" : startupDetails.websiteURL,
+        "app_link" : startupDetails.mobileAppLink,
+        "pan" : startupDetails.pan
+      })
+    });
+
+    const result = await response.json();
+    
+    result.success ? notify(result.success) :
+    result.error.map(e => notify(Object.keys(e) + " : " + e[Object.keys(e)]));
+  }
 
   return (
     <div className="form w-100">
+      <ToastContainer />
       <div className="form-container bg-white p-5">
         <div className="text-xxl align-center subhead fg-dark">
           {heading[page - 1]}
@@ -451,18 +503,20 @@ const FounderForm = () => {
               </label>
             </>
           )}
-          <div className="form-item">
-            <input
-              type={"button"}
-              name="go-back"
-              id="go-back"
-              className="input-field
-              btn-bg-secondary fg-primary"
-              value={"Go Back"}
-              onClick={() => setPage((prev) => (prev === 1 ? prev : prev - 1))}
-              required
-            />
-          </div>
+          { page !== 1 &&
+            <div className="form-item">
+              <input
+                type={"button"}
+                name="go-back"
+                id="go-back"
+                className="input-field
+                btn-bg-secondary fg-primary"
+                value={"Go Back"}
+                onClick={() => setPage((prev) => (prev === 1 ? prev : prev - 1))}
+                required
+              />
+            </div>
+          }
           <div className="form-item">
             <input
               disabled={false}
@@ -474,7 +528,7 @@ const FounderForm = () => {
                 true ? "btn-bg-primary" : "btn-primary"
               } fg-white`}
               value={page === 4 ? "Submit" : "Next"}
-              onClick={() => setPage((prev) => (prev === 4 ? prev : prev + 1))}
+              onClick={ page == 4 ? addFounder : changePage }
               required
             />
           </div>
