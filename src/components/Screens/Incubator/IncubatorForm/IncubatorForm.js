@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import React, { useState } from "react";
+=======
 import React, { useState, useEffect } from "react";
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 import {
   InputBox,
   SelectBox,
@@ -7,12 +11,26 @@ import {
 import "../../../CustomReactComponents/CustomInputBox/InputBox.css";
 import "../../../CustomReactComponents/CustomInputBox/Form.css";
 import "../../SignupPages/Signup.css";
+<<<<<<< HEAD
+import SucessfullStartup from "./SucessfullStartup";
+=======
 
 import SucessStories from "../../Investor/InvestorForm/SucessStories.js";
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 
 const IncubatorForm = () => {
   const [page, setPage] = useState(1);
 
+<<<<<<< HEAD
+  const [hasStartup, setHasStartup] = useState(0);
+  const [startups, setStartups] = useState([]);
+  const [numOfStartup, setNumOfStartup] = useState([]);
+
+  const [povDetails, setPovDetails] = useState({});
+
+  const [incubatorDetails, setIncubatorDetails] = useState({
+    pov: povDetails,
+=======
   const [startups, setStartups] = useState([]);
   useState([]);
 
@@ -20,6 +38,7 @@ const IncubatorForm = () => {
 
   const [incubatorDetails, setIncubatorDetails] = useState({
     pov: pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
     sucessfullStartups: startups,
   });
 
@@ -32,6 +51,8 @@ const IncubatorForm = () => {
 
   console.log(startups);
 
+<<<<<<< HEAD
+=======
   const updatePOcDetails = (pocDetails) => {
     setIncubatorDetails({ ...incubatorDetails, poc: pocDetails });
   };
@@ -50,6 +71,7 @@ const IncubatorForm = () => {
     updateSucessfullStartupDetails(startups);
   }, [startups]);
 
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
   return (
     <div className="form w-100">
       <div className="form-container bg-white p-5">
@@ -324,8 +346,13 @@ const IncubatorForm = () => {
                   idValue="first-name"
                   title="First Name"
                   getData={(data) =>
+<<<<<<< HEAD
+                    setPovDetails({
+                      ...povDetails,
+=======
                     setPocDetails({
                       ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       firsName: data,
                     })
                   }
@@ -337,8 +364,13 @@ const IncubatorForm = () => {
                   idValue="last-name"
                   title="Last Name"
                   getData={(data) =>
+<<<<<<< HEAD
+                    setPovDetails({
+                      ...povDetails,
+=======
                     setPocDetails({
                       ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       lastName: data,
                     })
                   }
@@ -350,8 +382,13 @@ const IncubatorForm = () => {
                   idValue="email-id"
                   title="Email ID"
                   getData={(data) =>
+<<<<<<< HEAD
+                    setPovDetails({
+                      ...povDetails,
+=======
                     setPocDetails({
                       ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       emailId: data,
                     })
                   }
@@ -363,8 +400,13 @@ const IncubatorForm = () => {
                   idValue="mobile-num"
                   title="Mobile number"
                   getData={(data) =>
+<<<<<<< HEAD
+                    setPovDetails({
+                      ...povDetails,
+=======
                     setPocDetails({
                       ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       mobileNum: data,
                     })
                   }
@@ -376,8 +418,13 @@ const IncubatorForm = () => {
                   idValue="role"
                   title="Role"
                   getData={(data) =>
+<<<<<<< HEAD
+                    setPovDetails({
+                      ...povDetails,
+=======
                     setPocDetails({
                       ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       role: data,
                     })
                   }
@@ -389,8 +436,13 @@ const IncubatorForm = () => {
                   idValue="landlineNum"
                   title="Landline Number"
                   getData={(data) =>
+<<<<<<< HEAD
+                    setPovDetails({
+                      ...povDetails,
+=======
                     setPocDetails({
                       ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       landlineNum: data,
                     })
                   }
@@ -403,8 +455,13 @@ const IncubatorForm = () => {
                   idValue="website"
                   title="Website"
                   getData={(data) =>
+<<<<<<< HEAD
+                    setPovDetails({
+                      ...povDetails,
+=======
                     setPocDetails({
                       ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       website: data,
                     })
                   }
@@ -417,8 +474,13 @@ const IncubatorForm = () => {
                   idValue="social-media"
                   title="Social Media URL"
                   getData={(data) =>
+<<<<<<< HEAD
+                    setPovDetails({
+                      ...povDetails,
+=======
                     setPocDetails({
                       ...pocDetails,
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       socialMediaURL: data,
                     })
                   }
@@ -427,7 +489,62 @@ const IncubatorForm = () => {
               </div>
             </>
           ) : (
+<<<<<<< HEAD
+            <>
+              <div className="form-item">
+                <span>
+                  <label htmlFor="sucess-story" className="text-md">
+                    Sucess Stories?
+                    {/* <span className="fg-danger"> *</span> */}
+                  </label>
+                  <input
+                    value={hasStartup}
+                    type="range"
+                    name="sucess-story"
+                    id="sucess-story"
+                    // className="input-field"
+                    className="slider-btn fg-primary"
+                    min={0}
+                    max={1}
+                    onChange={(e) => {
+                      setHasStartup(e.target.value);
+                      setNumOfStartup([...numOfStartup, e.target.value]);
+                    }}
+                    required
+                  />
+                </span>
+              </div>
+              <div className="form-item align-center"></div>
+
+              {numOfStartup.map((num) => (
+                <SucessfullStartup
+                  setStartups={setStartups}
+                  startups={startups}
+                  setNumOfStartup={setNumOfStartup}
+                />
+              ))}
+
+              <mb />
+              <label className="container text-md">
+                Terms and conditions The information posted on this website
+                could include hypertext links or pointers to information created
+                and maintained by non-Government/private organisations. DPIIT is
+                providing these links and pointers solely for your information
+                and convenience. When you select a link to an outside website,
+                you are leaving the 'Guidelines for Indian Government Websites'
+                site and are subject to the privacy and security policies of the
+                owners/sponsors of the outside website. These terms and
+                conditions shall be governed by and construed in accordance with
+                the Indian Laws. Any dispute arising under these terms and
+                conditions shall be subject to the jurisdiction of the courts of
+                India.
+                <input type="checkbox" />
+                <span className="checkmark"></span>
+              </label>
+            </>
+=======
             <SucessStories startups={startups} setStartups={setStartups} />
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
           )}
 
           <div className="form-item">

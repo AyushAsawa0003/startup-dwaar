@@ -43,10 +43,14 @@ const App = () => {
           <Route path="/investor/dashboard" element={<InvestorDashboard />} />
           <Route path="/incubator/dashboard" element={<IncubatorDashboard />} />
           <Route path="/mentor/dashboard" element={<MentorDashboard />} />
+<<<<<<< HEAD
+          <Route path="/jobseeker/dashboard" element={<JobSeekerDashboard />} />
+=======
           <Route
             path="/job-seeker/dashboard"
             element={<JobSeekerDashboard />}
           />
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 
           {/*///////////////      Forms  ///////////// */}
           <Route path="/login" element={<Login />} />
@@ -64,7 +68,11 @@ const App = () => {
           <Route path="/investor/details" element={<InvestorDetails />} />
           <Route path="/incubator/details" element={<IncubatorDetails />} />
           <Route path="/mentor/details" element={<MentorDetails />} />
+<<<<<<< HEAD
+          <Route path="/jobseeker/details" element={<JobSeekerDetails />} />
+=======
           <Route path="/job-seeker/details" element={<JobSeekerDetails />} />
+>>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 
           {/* ////////////////   404 not Found  /////////////////// */}
           <Route path="*" element={<NotFound />} />
