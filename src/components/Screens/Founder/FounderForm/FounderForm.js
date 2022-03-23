@@ -3,19 +3,12 @@ import {
   InputBox,
   SelectBox,
 } from "../../../CustomReactComponents/CustomInputBox/InputBox.js";
-<<<<<<< HEAD
-
-=======
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 import "../../../CustomReactComponents/CustomInputBox/InputBox.css";
 import "../../../CustomReactComponents/CustomInputBox/Form.css";
 import "../../SignupPages/Signup.css";
 import "./FounderForm.css";
-<<<<<<< HEAD
-=======
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 
 const FounderForm = () => {
   const [page, setPage] = useState(1);
@@ -24,11 +17,6 @@ const FounderForm = () => {
     interests: [],
   });
 
-<<<<<<< HEAD
-  console.log(JSON.stringify(startupDetails));
-
-=======
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
   const onCheck = (e) => {
     const val = e.target.value;
 
@@ -47,23 +35,12 @@ const FounderForm = () => {
     });
   };
 
-<<<<<<< HEAD
-  console.log(startupDetails);
-=======
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
   const heading = [
     "About Startup",
     "Contact Information",
     "Category",
     "Your Interest",
   ];
-<<<<<<< HEAD
-
-  console.log(startupDetails);
-
-  return (
-    <div className="form w-100">
-=======
   const changePage = () => {
     setPage((prev) => (prev === 4 ? prev : prev + 1))
   }
@@ -123,7 +100,6 @@ const FounderForm = () => {
   return (
     <div className="form w-100">
       <ToastContainer />
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
       <div className="form-container bg-white p-5">
         <div className="text-xxl align-center subhead fg-dark">
           {heading[page - 1]}
@@ -504,11 +480,7 @@ const FounderForm = () => {
                   <span className="checkmark"></span>
                 </label>
               </div>
-<<<<<<< HEAD
-              <mb />
-=======
               <span className="mb" />
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
               <label className="container text-md">
                 Terms and conditions The information posted on this website
                 could include hypertext links or pointers to information created
@@ -531,20 +503,6 @@ const FounderForm = () => {
               </label>
             </>
           )}
-<<<<<<< HEAD
-          <div className="form-item">
-            <input
-              type={"button"}
-              name="go-back"
-              id="go-back"
-              className="input-field
-              btn-bg-secondary fg-primary"
-              value={"Go Back"}
-              onClick={() => setPage((prev) => (prev === 1 ? prev : prev - 1))}
-              required
-            />
-          </div>
-=======
           { page !== 1 &&
             <div className="form-item">
               <input
@@ -559,7 +517,6 @@ const FounderForm = () => {
               />
             </div>
           }
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
           <div className="form-item">
             <input
               disabled={false}
@@ -571,11 +528,7 @@ const FounderForm = () => {
                 true ? "btn-bg-primary" : "btn-primary"
               } fg-white`}
               value={page === 4 ? "Submit" : "Next"}
-<<<<<<< HEAD
-              onClick={() => setPage((prev) => (prev === 4 ? prev : prev + 1))}
-=======
               onClick={ page == 4 ? addFounder : changePage }
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
               required
             />
           </div>

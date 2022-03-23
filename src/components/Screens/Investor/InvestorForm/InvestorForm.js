@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
-=======
 import React, { useEffect, useState } from "react";
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 import {
   InputBox,
   SelectBox,
@@ -11,30 +7,18 @@ import {
 import "../../../CustomReactComponents/CustomInputBox/InputBox.css";
 import "../../../CustomReactComponents/CustomInputBox/Form.css";
 import "../../SignupPages/Signup.css";
-<<<<<<< HEAD
-import SucessfullStartup from "./SucessfullStartup";
-=======
 import "./InvestorForm.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import SucessStories from "./SucessStories.js";
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 
 const InvestorForm = () => {
   const [page, setPage] = useState(1);
 
-<<<<<<< HEAD
-  const [hasStartup, setHasStartup] = useState(0);
-  const [startups, setStartups] = useState([]);
-  const [numOfStartup, setNumOfStartup] = useState([]);
-
-  const [povDetails, setPovDetails] = useState({});
-=======
   const [startups, setStartups] = useState([]);
 
   const [pocDetails, setPocDetails] = useState({});
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 
   const [investorDetails, setInvestorDetails] = useState({
     logo: "",
@@ -47,20 +31,11 @@ const InvestorForm = () => {
     city: "",
     country: "",
     investorContact: "",
-<<<<<<< HEAD
-    pov: povDetails,
-    sucessfullStartups: startups,
-  });
-
-  console.log(povDetails);
-
-=======
     poc: pocDetails,
     sucessfullStartups: startups,
   });
 
   const notify = data => toast(data);
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
   console.log(investorDetails);
 
   const onChange = () => {};
@@ -71,12 +46,6 @@ const InvestorForm = () => {
     "Sucess Stories",
   ];
 
-<<<<<<< HEAD
-  console.log(startups);
-
-  return (
-    <div className="form w-100">
-=======
   const updatePOcDetails = (pocDetails) => {
     setInvestorDetails({ ...investorDetails, poc: pocDetails });
   };
@@ -149,7 +118,6 @@ const InvestorForm = () => {
   return (
     <div className="form w-100">
       <ToastContainer />
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
       <div className="form-container bg-white p-5">
         <div className="text-xxl align-center subhead fg-dark">
           {heading[page - 1]}
@@ -349,13 +317,8 @@ const InvestorForm = () => {
                   idValue="first-name"
                   title="First Name"
                   getData={(data) =>
-<<<<<<< HEAD
-                    setPovDetails({
-                      ...povDetails,
-=======
                     setPocDetails({
                       ...pocDetails,
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       firsName: data,
                     })
                   }
@@ -367,13 +330,8 @@ const InvestorForm = () => {
                   idValue="last-name"
                   title="Last Name"
                   getData={(data) =>
-<<<<<<< HEAD
-                    setPovDetails({
-                      ...povDetails,
-=======
                     setPocDetails({
                       ...pocDetails,
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       lastName: data,
                     })
                   }
@@ -385,13 +343,8 @@ const InvestorForm = () => {
                   idValue="email-id"
                   title="Email ID"
                   getData={(data) =>
-<<<<<<< HEAD
-                    setPovDetails({
-                      ...povDetails,
-=======
                     setPocDetails({
                       ...pocDetails,
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       emailId: data,
                     })
                   }
@@ -403,13 +356,8 @@ const InvestorForm = () => {
                   idValue="mobile-num"
                   title="Mobile number"
                   getData={(data) =>
-<<<<<<< HEAD
-                    setPovDetails({
-                      ...povDetails,
-=======
                     setPocDetails({
                       ...pocDetails,
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       mobileNum: data,
                     })
                   }
@@ -421,13 +369,8 @@ const InvestorForm = () => {
                   idValue="role"
                   title="Role"
                   getData={(data) =>
-<<<<<<< HEAD
-                    setPovDetails({
-                      ...povDetails,
-=======
                     setPocDetails({
                       ...pocDetails,
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       role: data,
                     })
                   }
@@ -439,13 +382,8 @@ const InvestorForm = () => {
                   idValue="landlineNum"
                   title="Landline Number"
                   getData={(data) =>
-<<<<<<< HEAD
-                    setPovDetails({
-                      ...povDetails,
-=======
                     setPocDetails({
                       ...pocDetails,
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       landlineNum: data,
                     })
                   }
@@ -458,13 +396,8 @@ const InvestorForm = () => {
                   idValue="website"
                   title="Website"
                   getData={(data) =>
-<<<<<<< HEAD
-                    setPovDetails({
-                      ...povDetails,
-=======
                     setPocDetails({
                       ...pocDetails,
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       website: data,
                     })
                   }
@@ -477,13 +410,8 @@ const InvestorForm = () => {
                   idValue="social-media"
                   title="Social Media URL"
                   getData={(data) =>
-<<<<<<< HEAD
-                    setPovDetails({
-                      ...povDetails,
-=======
                     setPocDetails({
                       ...pocDetails,
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
                       socialMediaURL: data,
                     })
                   }
@@ -492,66 +420,10 @@ const InvestorForm = () => {
               </div>
             </>
           ) : (
-<<<<<<< HEAD
-            <>
-              <div className="form-item">
-                <span>
-                  <label htmlFor="sucess-story" className="text-md">
-                    Sucess Stories?
-                    {/* <span className="fg-danger"> *</span> */}
-                  </label>
-                  <input
-                    value={hasStartup}
-                    type="range"
-                    name="sucess-story"
-                    id="sucess-story"
-                    // className="input-field"
-                    className="slider-btn fg-primary"
-                    min={0}
-                    max={1}
-                    onChange={(e) => {
-                      setHasStartup(e.target.value);
-                      setNumOfStartup([...numOfStartup, e.target.value]);
-                    }}
-                    required
-                  />
-                </span>
-              </div>
-              <div className="form-item align-center"></div>
-
-              {numOfStartup.map((num) => (
-                <SucessfullStartup
-                  setStartups={setStartups}
-                  startups={startups}
-                  setNumOfStartup={setNumOfStartup}
-                />
-              ))}
-              <mb />
-              <label className="container text-md">
-                Terms and conditions The information posted on this website
-                could include hypertext links or pointers to information created
-                and maintained by non-Government/private organisations. DPIIT is
-                providing these links and pointers solely for your information
-                and convenience. When you select a link to an outside website,
-                you are leaving the 'Guidelines for Indian Government Websites'
-                site and are subject to the privacy and security policies of the
-                owners/sponsors of the outside website. These terms and
-                conditions shall be governed by and construed in accordance with
-                the Indian Laws. Any dispute arising under these terms and
-                conditions shall be subject to the jurisdiction of the courts of
-                India.
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-            </>
-          )}
-
-=======
             <SucessStories startups={startups} setStartups={setStartups} />
           )}
 
           { page !== 1 &&
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
           <div className="form-item">
             <input
               type={"button"}
@@ -563,15 +435,9 @@ const InvestorForm = () => {
               onClick={() => setPage((prev) => (prev === 1 ? prev : prev - 1))}
               required
             />
-<<<<<<< HEAD
-          </div>
-          <div className="form-item">
-            <input
-=======
           </div> }
           <div className="form-item">
             <input  
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
               disabled={false}
               type={"button"}
               name="submit-btn"
@@ -580,13 +446,8 @@ const InvestorForm = () => {
                 // checkAllFields()
                 true ? "btn-bg-primary" : "btn-primary"
               } fg-white`}
-<<<<<<< HEAD
-              value={page === 4 ? "Submit" : "Next"}
-              onClick={() => setPage((prev) => (prev === 4 ? prev : prev + 1))}
-=======
               value={ page === 4 ? "Submit" : "Next" }
               onClick={ page === 4 ? addInvestor : changePage }
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
               required
             />
           </div>
@@ -596,8 +457,4 @@ const InvestorForm = () => {
   );
 };
 
-<<<<<<< HEAD
 export default InvestorForm;
-=======
-export default InvestorForm;
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff

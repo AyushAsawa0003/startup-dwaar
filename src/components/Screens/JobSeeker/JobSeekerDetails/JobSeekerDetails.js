@@ -1,9 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
-
-const JobSeekerDetails = () => {
-  return <div>JobSeekerDetails</div>;
-=======
 import SelectBox from "../../../CustomReactComponents/SelectBox";
 
 import "./JobSeekerDetails.css";
@@ -97,7 +92,6 @@ const JobSeekerDetails = () => {
       </div>
     </div>
   );
->>>>>>> 33a43ae9df1a396cb9765cc242317e98936a30ff
 };
 
 export default JobSeekerDetails;
