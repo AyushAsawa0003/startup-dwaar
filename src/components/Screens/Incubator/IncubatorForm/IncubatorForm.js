@@ -14,11 +14,37 @@ const IncubatorForm = () => {
   const [startups, setStartups] = useState([]);
   useState([]);
 
-  const [pocDetails, setPocDetails] = useState({});
+  const [pocDetails, setPocDetails] = useState({
+    firsName: "",
+    lastName: "",
+    emailId: "",
+    mobileNum: "",
+    role: "",
+    landlineNum: "",
+    website: "",
+    socialMediaURL: ""
+    
+  });
 
   const [incubatorDetails, setIncubatorDetails] = useState({
     pov: pocDetails,
     sucessfullStartups: startups,
+    name: "",
+    dip: "",
+    logo: "",
+    dateOfEst: "",
+    currentIncubatees: "",
+    graduatedIncubatees: "",
+    budget: "",
+    stage: "",
+    industry: "",
+    interest: "",
+    brief: "",
+    country: "",
+    state: "",
+    city: "",
+    investorContact: ""
+
   });
 
   const heading = [

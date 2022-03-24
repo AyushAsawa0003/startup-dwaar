@@ -9,8 +9,10 @@ const FounderDashboard = () => {
       <div className="page-section">
         <div className="container dashboard bg-primary">
           <div className="text-center">
+
             <h1 className="dash-title fg-white">
               Services we provide for Entrepreneurs
+
             </h1>
             <h2 className="fg-white">See what can we do for your Business</h2>
           </div>
