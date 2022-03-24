@@ -8,6 +8,7 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 import "../../../CustomReactComponents/CustomInputBox/InputBox.css";
 import "../../../CustomReactComponents/CustomInputBox/Form.css";
 import "../../SignupPages/Signup.css";
+import ToggleSwitch from "../../../CustomReactComponents/ToggleSwitch/ToggleSwitch";
 
 const SucessStories = ({ startups, setStartups }) => {
   const [hasStartup, setHasStartup] = useState(0);
@@ -20,31 +21,20 @@ const SucessStories = ({ startups, setStartups }) => {
   return (
     <div>
       <>
-        <div className="form-item">
+        <span className="form-item">
           <span>
-            <label htmlFor="sucess-story" className="text-md">
-              Sucess Stories?
-              {/* <span className="fg-danger"> *</span> */}
-            </label>
-            <input
-              value={hasStartup}
-              type="range"
-              name="sucess-story"
-              id="sucess-story"
-              // className="input-field"
-              className="slider-btn fg-primary"
-              min={0}
-              max={1}
-              onChange={(e) => {
-                setHasStartup(e.target.value);
-              }}
-              required
+            Sucess Stories?
+            <ToggleSwitch
+              isOn={hasStartup}
+              handleToggle={() => setHasStartup(!hasStartup)}
+              onColor={"#7a6efb"}
+              offColor={"#bbb"}
             />
           </span>
-        </div>
+        </span>
         <div className="form-item align-center"></div>
 
-        {hasStartup === "1" ? (
+        {hasStartup ? (
           <>
             <SucessfullStartup
               setStartups={setStartups}

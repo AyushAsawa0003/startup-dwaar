@@ -1,0 +1,40 @@
+.react-switch-checkbox {
+  height: 0 !important;
+  width: 0 !important;
+  visibility: hidden !important;
+}
+
+.react-switch-label {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  cursor: pointer !important;
+  width: 50px !important;
+  height: 30px !important;
+  background: grey;
+  border-radius: 100px !important;
+  position: relative !important;
+  transition: background-color 0.2s !important;
+}
+
+.react-switch-label .react-switch-button {
+  content: "" !important;
+  position: absolute !important;
+  top: 2px !important;
+  left: 2px !important;
+  width: 25px !important;
+  height: 25px !important;
+  border-radius: 45px !important;
+  transition: 0.2s !important;
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29) !important;
+}
+
+.react-switch-checkbox:checked + .react-switch-label .react-switch-button {
+  left: calc(100% - 2px) !important;
+  transform: translateX(-100%) !important;
+}
+
+.react-switch-label:active .react-switch-button {
+  width: 30px !important;
+}

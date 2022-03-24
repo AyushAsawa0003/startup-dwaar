@@ -1,6 +1,7 @@
 import React from "react";
 import "./Signup.css";
-import { useParams, Link, useNavigate, Outlet } from "react-router-dom";
+import "../../../App.css";
+import { Link, Outlet } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 const users = [
@@ -32,7 +33,7 @@ const users = [
 ];
 const Signup = () => {
   // const { user } = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <div className="signup-card-container">
       <Outlet />
