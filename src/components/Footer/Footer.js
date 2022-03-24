@@ -25,7 +25,7 @@ const Footer = () => {
               style={{ alignSelf: "flex-start" }}
             >
               <div className="footer-container-item-item">
-                <FaLocationArrow size={24} className="icons" />
+                <FaLocationArrow size={40} className="icons" />
               </div>
             </div>
             <div className=" footer-container-item-item text-md">
@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
           <div className="footer-container-item">
             <div className="footer-container-item-item">
-              <FaEnvelope size={24} className="icons" />
+              <FaEnvelope size={40} className="icons" />
             </div>
             <div className="footer-container-item-item">
               contact@startupdwaar.com
@@ -78,19 +78,19 @@ const Footer = () => {
           <div className="footer-container-item text-xl">
             <div className="footer-container-item-item">Follow us on -</div>
             <div className="footer-container-item-item">
-              <FaLinkedin size={24} className="icons" />
+              <FaLinkedin size={40} className="icons" />
             </div>
             <div className="footer-container-item-item">
-              <FaTwitter size={24} className="icons" />
+              <FaTwitter size={40} className="icons" />
             </div>
             <div className="footer-container-item-item">
-              <FaFacebook size={24} className="icons" />
+              <FaFacebook size={40} className="icons" />
             </div>
             <div className="footer-container-item-item">
-              <FaInstagram size={24} className="icons" />
+              <FaInstagram size={40} className="icons" />
             </div>
             <div className="footer-container-item-item">
-              <FaYoutube size={24} className="icons" />
+              <FaYoutube size={40} className="icons" />
             </div>
           </div>
         </div>
