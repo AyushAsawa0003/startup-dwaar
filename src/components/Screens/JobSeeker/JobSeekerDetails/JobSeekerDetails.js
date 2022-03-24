@@ -76,6 +76,7 @@ const JobSeekerDetails = () => {
 
   return (
     <div className="main-container">
+      <div className="main-title"></div>
       <h5 className="fg-primary mb">
         Search Right Professional For your Startup
       </h5>

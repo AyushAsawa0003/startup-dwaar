@@ -38,16 +38,15 @@ const JobSeekerProfile = () => {
           </div>
         </div>
 
-        <a
+        <span
           className="card-body text-center btn-bg-primary fg-white"
-          href="https://getbootstrap.com/docs/4.0/components/card/"
           style={{
             borderRadius: "0px 0px 10px 10px ",
           }}
         >
           {" "}
           View Profile
-        </a>
+        </span>
       </div>
     </div>
   );
