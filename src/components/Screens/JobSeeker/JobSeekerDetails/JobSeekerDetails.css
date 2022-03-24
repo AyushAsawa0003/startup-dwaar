@@ -19,3 +19,7 @@
   display: flex;
   justify-content: space-around;
 }
+
+.main-title {
+  background-color: #7a6efb;
+}

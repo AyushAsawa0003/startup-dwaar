@@ -8,10 +8,10 @@ const IncubatorDashboard = () => {
       <div className="page-section">
         <div className="container dashboard bg-primary">
           <div className="text-center">
-            <h1 className="dash-title">
+            <h1 className="dash-title fg-white">
               Services we provide for Incubators/Accelerators
             </h1>
-            <h2>Connect directly with</h2>
+            <h2 className="fg-white">Connect directly with</h2>
           </div>
           <div className="row justify-content-center">
             <div className="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
@@ -24,7 +24,7 @@ const IncubatorDashboard = () => {
                     width="220px"
                   />
                 </div>
-                <h5>Founders</h5>
+                <h5 className="fg-white">Founders</h5>
               </div>
             </div>
             <div className="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
@@ -37,7 +37,7 @@ const IncubatorDashboard = () => {
                     width="220px"
                   />
                 </div>
-                <h5>Investors</h5>
+                <h5 className="fg-white">Investors</h5>
               </div>
             </div>
 
@@ -51,7 +51,7 @@ const IncubatorDashboard = () => {
                     width="220px"
                   />
                 </div>
-                <h5>Mentors</h5>
+                <h5 className="fg-white">Mentors</h5>
               </div>
             </div>
 
@@ -65,7 +65,7 @@ const IncubatorDashboard = () => {
                     width="220px"
                   />
                 </div>
-                <h5>Job Careers</h5>
+                <h5 className="fg-white">Job Careers</h5>
               </div>
             </div>
           </div>
