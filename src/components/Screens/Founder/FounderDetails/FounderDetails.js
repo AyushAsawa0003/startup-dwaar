@@ -85,7 +85,7 @@ const FounderDetails = () => {
       <div className="main-title"></div>
       <h5 className="fg-primary mb">Search Startups that Fits Your Goals</h5>
       <div className="search-bar-container text-sm bg-white">
-        <SelectBox data={industries} placeholder={"Technology"} />
+        <SelectBox data={industries} placeholder={"Industry"} />
         <SelectBox data={stages} placeholder={"Startup Stage"} />
         <SelectBox data={states} placeholder={"Location"} />
       </div>
