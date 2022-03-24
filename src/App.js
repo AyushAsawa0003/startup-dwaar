@@ -30,11 +30,13 @@ import IncubatorDetails from "./components/Screens/Incubator/IncubatorDetails/In
 import MentorDetails from "./components/Screens/Mentor/MentorDetails/MentorDetails";
 import JobSeekerDetails from "./components/Screens/JobSeeker/JobSeekerDetails/JobSeekerDetails";
 import NotFound from "./components/Error/NotFound";
+import ScrollToTop from "./ScrollToTop";
 
 const App = () => {
   return (
     <div className="bg-secondary">
       <Router>
+        <ScrollToTop />
         <NavigationBar />
         <Routes>
           <Route path="/" element={<Home />} />
