@@ -20,9 +20,8 @@ const JobSeekerForm = () => {
 
   const [jobseekerDetails, setJobseekerDetails] = useState({
     employmentStatus: employmentStatus,
+    primarySkills: "",
   });
-
-  console.log(JSON.stringify(jobseekerDetails));
 
   const heading = [
     "Basic Information",
@@ -31,7 +30,7 @@ const JobSeekerForm = () => {
     "Terms and Condition",
   ];
 
-  console.log(employmentStatus);
+  console.log(jobseekerDetails);
 
   return (
     <div className="form w-100">
@@ -97,6 +96,7 @@ const JobSeekerForm = () => {
               <SelectBox
                 for="industry"
                 label="Industry "
+                value={jobseekerDetails.interestedIndustry}
                 // onChange={onChange(e, )}
                 default={"Select"}
                 options={[
@@ -137,6 +137,47 @@ const JobSeekerForm = () => {
                     interest: e.target.value,
                   })
                 }
+              />
+
+              <SelectBox
+                for="primary-skill"
+                label="Primary Skill"
+                value={jobseekerDetails.primarySkills}
+                // onChange={onChange(e, )}
+                default={"Select"}
+                options={[
+                  "Banking",
+                  "React JS library",
+                  "Marketing",
+                  "Finance",
+                ]}
+                onChange={(e) =>
+                  setJobseekerDetails({
+                    ...jobseekerDetails,
+                    primarySkills: e.target.value,
+                  })
+                }
+              />
+
+              <SelectBox
+                for="secondary-skills"
+                label="Secondary Skill"
+                value={jobseekerDetails.secondarySkills}
+                // onChange={onChange(e, )}
+                default={"Select"}
+                options={[
+                  "Banking",
+                  "React JS library",
+                  "Marketing",
+                  "Finance",
+                ]}
+                onChange={(e) =>
+                  setJobseekerDetails({
+                    ...jobseekerDetails,
+                    secondarySkills: e.target.value,
+                  })
+                }
+                required={false}
               />
 
               <div className="form-item">
@@ -207,7 +248,7 @@ const JobSeekerForm = () => {
                 <>
                   <div className="form-item">
                     <InputBox
-                      idValue="tota;-l-working-experience"
+                      idValue="total-working-experience"
                       title="Total Working Experience"
                       getData={(data) =>
                         setJobseekerDetails({
