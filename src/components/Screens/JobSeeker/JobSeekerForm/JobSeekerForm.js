@@ -20,6 +20,23 @@ const JobSeekerForm = () => {
 
   const [jobseekerDetails, setJobseekerDetails] = useState({
     employmentStatus: employmentStatus,
+    resume: "",
+    stage: "",
+    interestedIndustry: "",
+    interest: "",
+    description: "",
+    jobseekerDetails: "",
+    company: "",
+    jobTitle: "",
+    workingCity: "",
+    workingSince: "",
+    noticePeriod: "",
+    salary: "",
+    secondaryMarks: "",
+    higherSecondaryMarks: "",
+    undergraduateCGPA: "",
+    pgCGPA: ""
+
   });
 
   console.log(JSON.stringify(jobseekerDetails));

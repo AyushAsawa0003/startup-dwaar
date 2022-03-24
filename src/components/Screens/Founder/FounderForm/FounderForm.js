@@ -15,6 +15,26 @@ const FounderForm = () => {
 
   const [startupDetails, setStartupDetails] = useState({
     interests: [],
+    startupName: "",
+    startupEmailID: "",
+    logo: "",
+    fund: "",
+    stage: "",
+    brief: "",
+    country: "",
+    state: "",
+    city: "",
+    investorContact: "",
+    websiteURL: "",
+    mobileAppLink: "",
+    budget: "",
+    sector: "",
+    services: "",
+    nature: "",
+    pan: "",
+    cin: "",
+    legalName: ""
+    
   });
 
   const onCheck = (e) => {

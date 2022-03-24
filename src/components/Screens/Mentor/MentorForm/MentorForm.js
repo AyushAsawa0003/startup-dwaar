@@ -17,7 +17,22 @@ const MentorForm = () => {
 
   const [startups, setStartups] = useState([]);
 
-  const [mentorDetails, setMentorDetails] = useState({ network: "TIE" });
+  const [mentorDetails, setMentorDetails] = useState({ 
+  network: "TIE",
+  stage: "",
+  activeMonths: "",
+  yearsOfExperience: "",
+  industry: "",
+  interest: "",
+  description: "",
+  country: "",
+  state: "",
+  city: "",
+  investorContact: ""
+
+
+
+});
 
   console.log(JSON.stringify(mentorDetails));
 
