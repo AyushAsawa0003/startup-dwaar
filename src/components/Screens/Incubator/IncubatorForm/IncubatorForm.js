@@ -3,11 +3,9 @@ import {
   InputBox,
   SelectBox,
 } from "../../../CustomReactComponents/CustomInputBox/InputBox.js";
-
 import "../../../CustomReactComponents/CustomInputBox/InputBox.css";
 import "../../../CustomReactComponents/CustomInputBox/Form.css";
 import "../../SignupPages/Signup.css";
-
 import SucessStories from "../../Investor/InvestorForm/SucessStories.js";
 
 const IncubatorForm = () => {

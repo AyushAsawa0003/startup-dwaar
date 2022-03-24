@@ -2,8 +2,37 @@ import React from "react";
 import "../SignupPages/Signup.css";
 import "./Login.css";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const notify = (data) => toast(data);
+
+  const user_login = async () => {
+    const response = await fetch("/user/login/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    });
+
+    const result = await response.json();
+
+    result.success ? notify(result.success) : notify(result.error);
+    if (result.user) {
+      localStorage.setItem("user", JSON.stringify(result.user));
+    }
+
+    console.log(JSON.parse(localStorage.getItem("user")).first_name);
+  };
+
   return (
     <div className="form-container bg-white">
       <div className="form-main">
@@ -21,7 +50,8 @@ const Login = () => {
             id="login-email-id"
             className="input-field"
             placeholder="Enter your email id"
-            // onChange={(e) => addPersonalDetail(e, "first")}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
 
@@ -35,7 +65,8 @@ const Login = () => {
             id="login-password"
             className="input-field"
             placeholder="Enter your password"
-            // onChange={(e) => addPersonalDetail(e, "last")}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
           <div className="text-xs fg-black extra-option">
@@ -48,14 +79,11 @@ const Login = () => {
           </div>
           <input
             // disabled={!validateForm()}
-            type={"submit"}
             name="submit-btn"
             id="submit-btns"
-            className={"input-field btn-bg-primary fg-white"}
+            className={"input-field btn-bg-primary fg-white text-center"}
             value={"Login"}
-            // onClick={() => {
-            //   // setPage((prev) => prev + 1);
-            // }}
+            onClick={user_login}
             required
           />
           <div className="text-xs fg-black extra-option">

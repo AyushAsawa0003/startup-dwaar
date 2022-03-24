@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Poppins', sans-serif!important;
   font-weight: 400;
   line-height: 1.65;
   color: #2d2f38;
@@ -31,11 +33,11 @@ a:hover {
 }
 
 .btn {
-  padding: 10px 28px;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  border-width: 1px;
-  border-color: #fff;
+  padding: 10px 28px !important;
+  -webkit-transition: all 0.2s ease !important;
+  transition: all 0.2s ease !important;
+  border-width: 1px !important;
+  border-color: #fff !important;
 }
 
 .btn-primary:disabled,
@@ -521,7 +523,10 @@ a.fg-light:focus {
   border-color: #06cc89;
 }
 
-.btn-success:hover {
+.btn-su
+
+
+ccess:hover {
   color: #fff;
   background-color: #05b378;
   border-color: #05a770;

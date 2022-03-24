@@ -3,6 +3,7 @@ import SelectBox from "../../../CustomReactComponents/SelectBox";
 
 import "./JobSeekerDetails.css";
 import JobSeekerProfile from "./JobSeekerProfile";
+import { v4 as uuidv4 } from "uuid";
 
 const JobSeekerDetails = () => {
   const technology = [
@@ -74,8 +75,72 @@ const JobSeekerDetails = () => {
     },
   ];
 
+  const profiles = [
+    {
+      id: uuidv4(),
+      name: "Ayush Asawa",
+      img: "",
+      location: "Mumbai",
+      level: "Fresher",
+      title: "Frontend Developer",
+      primarySkill: "React",
+      secondarySkill: "Java",
+    },
+    {
+      id: uuidv4(),
+      name: "Divit Kalathil",
+      img: "",
+      location: "Mumbai",
+      level: "Fresher",
+      title: "Backend  Developer",
+      primarySkill: "Java",
+      secondarySkill: "Python",
+    },
+    {
+      id: uuidv4(),
+      name: "Pranav Aher",
+      img: "",
+      location: "Mumbai",
+      level: "Intermediate",
+      title: "Full Stack Developer",
+      primarySkill: "Python",
+      secondarySkill: "React",
+    },
+    {
+      id: uuidv4(),
+      name: "Shravani Rahise",
+      img: "",
+      location: "Nagpur",
+      level: "Fresher",
+      title: "Account Executive",
+      primarySkill: "Excel",
+      secondarySkill: "Alteryx",
+    },
+    {
+      id: uuidv4(),
+      name: "Archis Gune",
+      img: "",
+      location: "Mumbai",
+      level: "Intermediate",
+      title: "Power Electronics",
+      primarySkill: "Control Systems",
+      secondarySkill: "Analog Circuits",
+    },
+    {
+      id: uuidv4(),
+      name: "Rahul Gupta",
+      img: "",
+      location: "Delhi",
+      level: "Pro",
+      title: "Project Manager",
+      primarySkill: "Risk Management",
+      secondarySkill: "AWS",
+    },
+  ];
+
   return (
     <div className="main-container">
+      <div className="main-title"></div>
       <h5 className="fg-primary mb">
         Search Right Professional For your Startup
       </h5>
@@ -86,9 +151,17 @@ const JobSeekerDetails = () => {
       </div>
       <div className="mb" />
       <div className="profile-container">
-        <JobSeekerProfile />
-        <JobSeekerProfile />
-        <JobSeekerProfile />
+        {profiles.map((profile) => (
+          <JobSeekerProfile
+            key={profile.id}
+            title={profile.title}
+            name={profile.name}
+            location={profile.location}
+            level={profile.level}
+            primarySkill={profile.primarySkill}
+            secondarySkill={profile.secondarySkill}
+          />
+        ))}
       </div>
     </div>
   );

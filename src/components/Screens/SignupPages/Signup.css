@@ -90,6 +90,11 @@ li {
   font-size: 1rem !important;
 }
 
+.input-field:focus {
+  outline: none !important;
+  border: solid #a29afb 2px !important;
+}
+
 input[type="radio"] {
   /* width: 100%; */
   height: 20px !important;

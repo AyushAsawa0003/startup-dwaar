@@ -9,12 +9,14 @@ const FounderDashboard = () => {
       <div className="page-section">
         <div className="container dashboard bg-primary">
           <div className="text-center">
-            <h1 className="dash-title">
-              Services we provide for entrepreneurs
+
+            <h1 className="dash-title fg-white">
+              Services we provide for Entrepreneurs
+
             </h1>
-            <h2>See what can we do for your Business</h2>
+            <h2 className="fg-white">See what can we do for your Business</h2>
           </div>
-          <div className="row justify-content-center">
+          <div className="row justify-content-center ">
             <div className="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
               <div className="text-center img-border">
                 <div className="img-fluid mb-4">
@@ -25,7 +27,7 @@ const FounderDashboard = () => {
                     width="220px"
                   />
                 </div>
-                <h5>Investors</h5>
+                <h5 className="fg-white">Investors</h5>
               </div>
             </div>
             <div className="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
@@ -38,7 +40,7 @@ const FounderDashboard = () => {
                     width="220px"
                   />
                 </div>
-                <h5>Incubators</h5>
+                <h5 className="fg-white">Incubators</h5>
               </div>
             </div>
 
@@ -52,7 +54,7 @@ const FounderDashboard = () => {
                     width="220px"
                   />
                 </div>
-                <h5>Mentorship</h5>
+                <h5 className="fg-white">Mentorship</h5>
               </div>
             </div>
 
@@ -66,7 +68,7 @@ const FounderDashboard = () => {
                     width="220px"
                   />
                 </div>
-                <h5>Job Careers</h5>
+                <h5 className="fg-white">Hire Professional</h5>
               </div>
             </div>
           </div>
@@ -172,7 +174,6 @@ const FounderDashboard = () => {
               <h4>How to Start a Business, the Guide for Entrepreneurs</h4>
             </li>
             <YoutubeEmbed embedId="PkplQjXRWsk" />
-
             <li>
               <h4>Top 5 Entrepreneurship Lessons</h4>
             </li>

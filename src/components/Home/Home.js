@@ -1,27 +1,16 @@
 import React from "react";
+import Header from "./Header";
 import "./Home.css";
+import Slider from "./Slider";
 
 const Home = () => {
   return (
-    <div className="home-container bg-secondary">
-      <div className="home-discription bg-primary">
-        <div>
-          <span className="home-title-main fg-white">Startup</span>
-          <span className="home-title-main fg-font-dark">Dwaar</span>
-        </div>
-        <div className="text-xl fg-white">
-          HAVE NO FEAR, WE GOT EVERYTHING HERE!
-        </div>
-      </div>
-      <div className="home-discription bg-primary">
-        <ul className="fg-white bold">
-          <li>Connect with Investors</li>
-          <li>Meet Industry Mentors</li>
-          <li>Find Professional Workers</li>
-          <li>Find Best Incubation Centers</li>
-          <li>Invest in Best Startups</li>
-        </ul>
-      </div>
+    <div className="container-fluid px-0 bg-secondary">
+      <Header />
+      <Slider title="What are you looking for ?" />
+      <Slider title="Startup" />
+      <Slider title="Investor" />
+      <Slider title="Incubator" />
     </div>
   );
 };
