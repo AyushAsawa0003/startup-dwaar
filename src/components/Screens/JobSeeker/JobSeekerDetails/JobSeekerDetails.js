@@ -79,6 +79,7 @@ const JobSeekerDetails = () => {
     {
       id: uuidv4(),
       name: "Ayush Asawa",
+      img: "",
       location: "Mumbai",
       level: "Fresher",
       title: "Frontend Developer",
@@ -88,6 +89,7 @@ const JobSeekerDetails = () => {
     {
       id: uuidv4(),
       name: "Divit Kalathil",
+      img: "",
       location: "Mumbai",
       level: "Fresher",
       title: "Backend  Developer",
@@ -97,6 +99,7 @@ const JobSeekerDetails = () => {
     {
       id: uuidv4(),
       name: "Pranav Aher",
+      img: "",
       location: "Mumbai",
       level: "Intermediate",
       title: "Full Stack Developer",
@@ -106,6 +109,7 @@ const JobSeekerDetails = () => {
     {
       id: uuidv4(),
       name: "Shravani Rahise",
+      img: "",
       location: "Nagpur",
       level: "Fresher",
       title: "Account Executive",
@@ -115,6 +119,7 @@ const JobSeekerDetails = () => {
     {
       id: uuidv4(),
       name: "Archis Gune",
+      img: "",
       location: "Mumbai",
       level: "Intermediate",
       title: "Power Electronics",
@@ -124,6 +129,7 @@ const JobSeekerDetails = () => {
     {
       id: uuidv4(),
       name: "Rahul Gupta",
+      img: "",
       location: "Delhi",
       level: "Pro",
       title: "Project Manager",
