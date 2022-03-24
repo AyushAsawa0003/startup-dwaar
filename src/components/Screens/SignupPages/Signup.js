@@ -45,7 +45,7 @@ const Signup = () => {
           <span>{user.info}</span>
           <Link to={`/signup/${user.name}`}>
             <div
-              className="input-field btn btn-bg-primary fg-white"
+              className="btn btn-bg-primary fg-white"
               // onClick={() => navigate(`/signup/${user.name}`)}
             >
               Join us
