@@ -22,7 +22,7 @@ const customStyles = {
 
 const SelectBox = ({ data, placeholder }) => {
   return (
-    <div className="container fg-black text-md">
+    <div className="select-box-container fg-black text-md">
       <Select
         // width="500px"
         options={data}
