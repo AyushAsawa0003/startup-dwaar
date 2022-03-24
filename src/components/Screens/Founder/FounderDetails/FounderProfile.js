@@ -40,12 +40,18 @@ const FounderProfile = ({ img, name, stage, location, industry }) => {
       </div>
 
       <span
-        className="card-body text-center btn-bg-primary fg-white"
+        className="card-bottom btn-bg-primary "
         style={{
+          // position: "relative",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           borderRadius: "0px 0px 10px 10px ",
+          height: 50,
+          // alignSelf: "center",
         }}
       >
-        View Profile
+        <span className="fg-white">View Profile</span>
       </span>
     </div>
   );
