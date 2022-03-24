@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 import OTPInput, { ResendOTP } from "otp-input-react";
 import { FaInfo } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const personalDetials = {
   firstName: "",
@@ -77,7 +79,7 @@ const SignupMain = () => {
     filterData = Object.keys(personalState).filter((key) => {
       return personalState[key] === "";
     });
-    console.log(filterData);
+    // console.log(filterData);
     if (filterData.length === 0 && OTP.length === 4) {
       return true;
     } else {
@@ -121,6 +123,33 @@ const SignupMain = () => {
     return false;
   };
 
+  const notify = data => toast(data);
+
+  const addUser = async () => {
+    const response = await fetch('/user/registration/', {
+      method : "POST",
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 
+        "first_name" : personalState.firstName,
+        "last_name" : personalState.lastName,
+        "gender" : personalState.gender,
+        "linkedin" : personalState.linkedinURL,
+        "mobile_number" : personalState.phoneNumber,
+        "about" : personalState.preference,
+        "email" : personalState.emailId,
+        "password1" : personalState.password,
+        "password2" : personalState.password
+      })
+    });
+
+    const result = await response.json();
+    
+    result.success ? notify(result.success) :
+    result.error.map(e => notify(Object.keys(e) + " : " + e[Object.keys(e)]));
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     validateForm() ? navigate("/") : console.log("form not validated");
@@ -130,6 +159,7 @@ const SignupMain = () => {
 
   return (
     <div className="form-container bg-white">
+      <ToastContainer />
       <div className="text-xxl align-center subhead fg-dark">
         Welcome to Startup Dwaar
       </div>
@@ -418,9 +448,7 @@ const SignupMain = () => {
                 checkAllFields() ? "btn btn-bg-primary" : "btn-primary"
               } fg-white`}
               value={"Submit"}
-              // onClick={() => {
-              //   // setPage((prev) => prev + 1);
-              // }}
+              onClick={ addUser }
               required
             />
           </div>
