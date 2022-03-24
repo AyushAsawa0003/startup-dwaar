@@ -47,7 +47,7 @@ const FounderForm = () => {
   
   const notify = data => toast(data);
   const addFounder = async () => {
-    console.log(startupDetails);
+    
     let startup_interests = { 
       "All" : false,
       "investor" : false,
