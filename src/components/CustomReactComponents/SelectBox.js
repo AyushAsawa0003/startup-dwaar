@@ -3,21 +3,14 @@ import Select from "react-select";
 import "./SelectBox.css";
 
 const customStyles = {
-  option: (provided, state) => ({
-    // ...provided,
-    // borderBottom: "1px dotted pink",
-    // color: state.isSelected ? "red" : "blue",
-    // padding: 20,
+  valueContainer: (provided, state) => ({
+    ...provided,
+    textOverflow: "ellipsis",
+    maxWidth: "90%",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    display: "initial",
   }),
-  control: () => ({
-    // none of react-select's styles are passed to <Control />
-  }),
-  singleValue: (provided, state) => {
-    const opacity = state.isDisabled ? 0.5 : 1;
-    const transition = "opacity 300ms";
-
-    return { ...provided, opacity, transition };
-  },
 };
 
 const SelectBox = ({ data, placeholder }) => {
@@ -25,6 +18,7 @@ const SelectBox = ({ data, placeholder }) => {
     <div className="select-box-container fg-black text-md">
       <Select
         // width="500px"
+        // isMulti={isMulti}
         options={data}
         theme={(theme) => ({
           ...theme,
@@ -38,6 +32,7 @@ const SelectBox = ({ data, placeholder }) => {
           },
         })}
         placeholder={placeholder}
+        // styles={isMulti && customStyles}
       />
     </div>
   );
