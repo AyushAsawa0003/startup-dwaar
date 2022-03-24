@@ -1,0 +1,15 @@
+.header_background{
+    width: 100%;
+    height: 80vh;
+}
+
+.header_container{
+    position: relative;
+}
+
+.header_content{
+    width: 40vw;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
