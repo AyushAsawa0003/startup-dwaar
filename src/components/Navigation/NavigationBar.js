@@ -3,8 +3,8 @@ import React from "react";
 import "./NavigationBar.css";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const NavigationBar = () => {
   const nav_options = [
@@ -15,25 +15,24 @@ const NavigationBar = () => {
     "Job-seeker",
   ];
 
-  const notify = data => toast(data);
+  const notify = (data) => toast(data);
 
   const userLogout = async () => {
-    const response = await fetch('/user/logout/', {
-      method : "POST",
-      headers: { 
-        'Content-Type': 'application/json'
-      }
+    const response = await fetch("/user/logout/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
 
     const result = await response.json();
     if (result.success) {
-      notify(result.success)
+      notify(result.success);
       localStorage.removeItem("user");
-    }
-    else{
+    } else {
       notify(result.error);
     }
-  }
+  };
 
   return (
     <nav className="nav-bar-container bg-white">
@@ -60,7 +59,9 @@ const NavigationBar = () => {
         <Link to={"/signup"}>
           <span className="nav-bar-option text-lg fg-primary">Signup</span>
         </Link>
-        <button onClick={ userLogout }>Logout</button>
+        <button className="btn btn-bg-primary fg-white" onClick={userLogout}>
+          Logout
+        </button>
       </div>
     </nav>
   );
