@@ -29,7 +29,7 @@ const Slider = (props) => {
           to={`${props.title.toLowerCase()}/details`}
           style={{ textDecorationLine: "none" }}
         >
-          <span className="mb-0 btn btn-bg-primary fg-white">View all</span>
+          <span className="mb-0 ">View all</span>
         </Link>
       </div>
       <div className="d-flex justify-content-between mt-4">
