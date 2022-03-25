@@ -8,7 +8,7 @@ const Header = () => {
       <img className="header_background" src={headerImg} alt="" />
       <div className="header_content">
         <h4 className="fw-bold fg-primary">HAVE NO FEAR,</h4>
-        <h1 className="text-primary fg-primary">We got everything here!</h1>
+        <h1 className="fg-primary">We've got everything here!</h1>
         <p className="pt-4 text-secondary">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum sint
           iste temporibus inventore animi voluptatem praesentium eos distinctio
